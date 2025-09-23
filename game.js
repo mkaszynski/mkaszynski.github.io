@@ -82,17 +82,17 @@ function loop() {
     };
   };
   
-  if (keys["a"]) {
+  if (keys["a"] || (mouse.held[0] && mouse.x < posx)) {
     velx += -0.2;
   }
-  if (keys["d"]) {
+  if (keys["d"] || (mouse.held[0] && mouse.x > posx)) {
     velx += 0.2;
   }
   
-  if (keys["w"] && CanJump) {
+  if (CanJump && (keys["w"] || (mouse.held[0] && mouse.y < posy))) {
     vely += -7;
   }
-  if (keys["s"]) {
+  if (keys["s"] || (mouse.held[0] && mouse.y > posy)) {
     vely += 0.1;
   }
 
